@@ -1,0 +1,42 @@
+# ===== Sensitive config files (real values, never commit) =====
+# This blocks application.properties/yaml in every service folder,
+# no matter how deep it is nested.
+**/application.properties
+**/application.yml
+**/application.yaml
+**/.env
+
+# ===== Maven build output =====
+**/target/
+**/.mvn/wrapper/maven-wrapper.jar
+
+# ===== IntelliJ IDEA =====
+**/.idea/
+**/*.iml
+**/*.ipr
+**/*.iws
+**/out/
+
+# ===== Eclipse / STS =====
+**/.classpath
+**/.project
+**/.settings/
+**/.factorypath
+**/bin/
+
+# ===== VS Code =====
+**/.vscode/
+
+# ===== OS junk =====
+**/.DS_Store
+**/Thumbs.db
+
+# ===== Logs =====
+**/*.log
+**/logs/
+
+# ===== Java =====
+**/*.class
+
+# ===== Docker (if you add compose overrides later with real values) =====
+**/docker-compose.override.yml

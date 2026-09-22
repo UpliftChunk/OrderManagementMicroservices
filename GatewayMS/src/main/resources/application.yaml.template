@@ -1,0 +1,38 @@
+
+server:
+  port: 8080
+
+jwt:
+  secret: my_jwt_secret_here
+
+spring:
+  application:
+    name: GatewayMS
+
+  cloud:
+    gateway:
+      routes:
+        - id: user-ms
+          uri: http://localhost:8081
+          predicates:
+            - Path=/users/**
+
+        - id: product-ms
+          uri: http://localhost:8082
+          predicates:
+            - Path=/products/**
+
+        - id: inventory-ms
+          uri: http://localhost:8083
+          predicates:
+            - Path=/inventory/**
+
+        - id: order-ms
+          uri: http://localhost:8084
+          predicates:
+            - Path=/order/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
